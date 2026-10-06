@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ethiopian Calendar</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="today-top">
+      <div class="today-day" id="todayDay"></div>
+      <div class="today-text">
+        <div class="today-date" id="todayDate"></div>
+        <div class="today-greg" id="todayGreg" lang="en"></div>
+        <div class="today-time" id="todayTime"></div>
+      </div>
+    </div>
+    <div class="lang-toggle" id="languageToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="am" id="langAm" lang="am" aria-label="አማርኛ" aria-pressed="false">አማ</button>
+      <button type="button" data-lang="en" id="langEn" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button type="button" id="prevYear" title="Previous year">«</button>
+    <button type="button" id="prevMonth" title="Previous month">‹</button>
+    <div class="nav-title">
+      <span id="monthName"></span>
+      <span id="yearNum"></span>
+    </div>
+    <button type="button" id="nextMonth" title="Next month">›</button>
+    <button type="button" id="nextYear" title="Next year">»</button>
+  </nav>
+
+  <div class="greg-range" id="gregRange" lang="en"></div>
+  <p class="date-hint" id="dateHint"></p>
+
+  <div class="grid weekdays" id="weekdays"></div>
+  <div class="grid days" id="days"></div>
+
+  <footer>
+    <button type="button" id="todayBtn"></button>
+    <div class="holiday-note" id="holidayNote"></div>
+  </footer>
+
+  <p id="storageError" role="alert" hidden></p>
+
+  <section id="dayDetails" aria-labelledby="appointmentsHeading" hidden>
+    <h2 id="appointmentsHeading"></h2>
+    <p id="selectedDate"></p>
+    <p id="selectedGregorian" lang="en"></p>
+    <p id="selectedHoliday" class="holiday-label" hidden></p>
+    <p id="holidayCoverage" class="appointment-meta"></p>
+    <section class="orthodox" aria-labelledby="orthodoxHeading">
+      <h3 id="orthodoxHeading"></h3>
+      <p id="orthodoxFast"></p>
+      <p id="orthodoxSeason" class="appointment-meta"></p>
+      <p id="orthodoxFeastsLabel" class="appointment-meta" hidden></p>
+      <ul id="orthodoxFeasts"></ul>
+      <p id="orthodoxMonthly" class="appointment-meta" hidden></p>
+    </section>
+    <div class="appointment-actions">
+      <button type="button" id="connectGoogle"></button>
+      <button type="button" id="refreshAppointments" hidden></button>
+      <button type="button" id="disconnectGoogle" hidden></button>
+    </div>
+    <p id="appointmentStatus" role="status"></p>
+    <p id="appointmentError" role="alert" hidden></p>
+    <p id="appointmentTimeZone" class="appointment-meta"></p>
+    <ul id="appointmentList" aria-busy="false"></ul>
+  </section>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

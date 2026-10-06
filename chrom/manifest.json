@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Ethiopian Calendar",
+  "description": "Today's Ethiopian date, a navigable Ethiopian month view with Gregorian dates, holidays and Ethiopian time.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "110",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Ethiopian Calendar",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "alarms", "identity", "notifications"],
+  "host_permissions": ["https://www.googleapis.com/*"],
+  "oauth2": {
+    "client_id": "405084986282-fujjufud9olpvrk6ksripccr0qrbr1r4.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+      "https://www.googleapis.com/auth/calendar.events.readonly"
+    ]
+  }
+}

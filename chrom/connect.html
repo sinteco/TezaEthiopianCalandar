@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connect Google Calendar</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body class="connect-page">
+  <main>
+    <h1>Connect Google Calendar</h1>
+    <p lang="am">Google Calendarን ያገናኙ</p>
+    <p>Allow read-only access to your calendar list and events. No appointments will be created or changed.</p>
+    <p lang="am">የቀን መቁጠሪያዎን እና ቀጠሮዎችዎን ለማንበብ ፈቃድ ይስጡ። ቀጠሮዎችዎ አይቀየሩም።</p>
+    <button type="button" id="authorizeGoogle">Sign in with Google / <span lang="am">በGoogle ይግቡ</span></button>
+    <p id="connectStatus" role="status"></p>
+    <p id="connectError" role="alert"></p>
+    <details>
+      <summary>Setup help / <span lang="am">የማዋቀሪያ እገዛ</span></summary>
+      <p>The OAuth client must have application type <strong>Chrome Extension</strong>
+        and its Item ID must match the extension ID shown at <code>chrome://extensions</code>.
+        Enable Google Calendar API in the same Google Cloud project, and add your
+        Google account as a test user if the consent screen is in Testing mode.</p>
+      <p>Both calendar-list and event read permissions are required. See the extension README for full setup instructions.</p>
+    </details>
+  </main>
+  <script type="module" src="connect.js"></script>
+</body>
+</html>
